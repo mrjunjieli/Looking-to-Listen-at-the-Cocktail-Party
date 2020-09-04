@@ -22,7 +22,7 @@ cat_train = pd.read_csv('../csv/avspeech_train.csv',header=None)
 
 # create 80000-90000 audios data from 290K
 utils.mkdir('audio_train')
-make_audio('audio_train','audio_train',cat_train,1,3)
+make_audio('audio_train','audio_train',cat_train,3,5)
 
 
 

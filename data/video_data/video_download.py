@@ -89,4 +89,4 @@ cat_train = pd.read_csv('../csv/avspeech_train.csv',header=None)
 #avh.generate_frames(loc='video_train',v_name='clip_video_train',start_idx=2,end_idx=4)
 
 # download each video and convert to frames immediately
-download_video_frames(loc='video_train',d_csv=cat_train,start_idx=1,end_idx=3,rm_video=False)
+download_video_frames(loc='video_train',d_csv=cat_train,start_idx=3,end_idx=5,rm_video=False)
