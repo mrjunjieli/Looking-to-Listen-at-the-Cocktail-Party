@@ -60,7 +60,7 @@ def download_video_frames(loc,d_csv,start_idx,end_idx,rm_video):
         command = 'cd %s;' % loc
         f_name = str(i)
         link = "https://www.youtube.com/watch?v="+d_csv.loc[i][0]
-        print(link)
+
         start_time = d_csv.loc[i][1]
         #start_time = 90
         start_time = time.strftime("%H:%M:%S.0",time.gmtime(start_time))
@@ -89,4 +89,4 @@ cat_train = pd.read_csv('../csv/avspeech_train.csv',header=None)
 #avh.generate_frames(loc='video_train',v_name='clip_video_train',start_idx=2,end_idx=4)
 
 # download each video and convert to frames immediately
-download_video_frames(loc='video_train',d_csv=cat_train,start_idx=19,end_idx=20,rm_video=False)
+download_video_frames(loc='video_train',d_csv=cat_train,start_idx=1,end_idx=3,rm_video=False)

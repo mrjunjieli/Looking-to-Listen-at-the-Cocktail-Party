@@ -55,7 +55,7 @@ def face_detect(file,detector,frame_path,cat_train,output_dir):
 
 if __name__ == "__main__":
     detector = MTCNN()
-    d_csv = pd.read_csv('../csv/avspeech_train.csv', header=None)
+    d_csv = pd.read_csv('../csv/avspeech_train.csv', header=None)  
     frame_pth = './frames/'
     output = './face_input'
     detect_range = (0, 20)
