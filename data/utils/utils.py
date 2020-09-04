@@ -18,7 +18,7 @@ def download(loc,name,link,sr=16000,type='audio'): #download audio
         command = 'cd %s;' % loc
         command += 'youtube-dl -x --audio-format wav -o o' + name + '.wav ' + link + ';'
         command += 'ffmpeg -i o%s.wav -ar %d -ac 1 %s.wav;' % (name,sr,name)
-        command += 'rm o%s.wav' % name
+        # command += 'rm o%s.wav' % name
         os.system(command)
 
 
