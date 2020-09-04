@@ -3,7 +3,7 @@ import os
 import numpy as np
 import scipy.io.wavfile as wavfile
 
-audio_range = (1, 3)
+audio_range = (3, 5)
 
 if not os.path.exists('./norm_audio_train'):
     os.mkdir('./norm_audio_train')
