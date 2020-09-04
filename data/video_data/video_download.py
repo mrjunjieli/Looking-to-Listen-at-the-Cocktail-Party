@@ -60,6 +60,7 @@ def download_video_frames(loc,d_csv,start_idx,end_idx,rm_video):
         command = 'cd %s;' % loc
         f_name = str(i)
         link = "https://www.youtube.com/watch?v="+d_csv.loc[i][0]
+        print(link)
         start_time = d_csv.loc[i][1]
         #start_time = 90
         start_time = time.strftime("%H:%M:%S.0",time.gmtime(start_time))
