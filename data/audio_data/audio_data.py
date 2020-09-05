@@ -43,7 +43,7 @@ def generate_data_list(data_r=data_range, audio_norm_pth=audio_norm_path, frame_
     frame_set = set()
     with open(frame_valid, 'r') as f:
         frames = f.readlines()
-
+    
     for idx in range(len(frames)):
         frame = frames[idx].replace('\n', '').replace('frame_', '')
         frame_set.add(int(frame))
