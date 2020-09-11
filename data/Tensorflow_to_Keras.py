@@ -8,7 +8,7 @@ sys.path.append('./utils/')
 from resnet import *
 
 
-tf_model_dir = '/Users/apple/Downloads/20180402-114759/'
+tf_model_dir = '../../20180402-114759/'
 npy_weights_dir = './model/keras/npy_weights/'
 weights_dir = './model/keras/weights/'
 model_dir = './model/keras/model/'

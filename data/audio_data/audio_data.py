@@ -80,8 +80,9 @@ def split_to_mix(audio_path_list, data_path=database_path, partition=2):
     start = 0
     part_idx = 0
     split_list = []
-    while ((start + part_len) < length):
+    while ((start + part_len) <= length):
         part = audio_path_list[start:(start + part_len)]
+        
         split_list.append(part)
         with open('%s/single_TF_part%d.txt' % (data_path, part_idx), 'a') as f:
             for idx, _ in part:
