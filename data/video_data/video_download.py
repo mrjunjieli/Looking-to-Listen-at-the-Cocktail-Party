@@ -74,10 +74,14 @@ def download_video_frames(loc,d_csv,start_idx,end_idx,rm_video):
         #command += 'ffmpeg -i %s.mp4 -y -f image2  -vframes 75 ../frames/%s-%%02d.jpg;' % (f_name, f_name)
         command += 'ffmpeg -i %s.mp4 -vf fps=25 ../frames/%s-%%02d.jpg;' % (f_name, f_name)
         #command += 'ffmpeg -i %s.mp4 ../frames/%sfr_%%02d.jpg;' % ('clip_' + f_name, f_name)
-
+        
+        print('------------------')
+        print(command)
+        print('------------------')
         if rm_video:
             command += 'rm %s.mp4;' % f_name
         os.system(command)
+        
         print("\r Process video... ".format(i) + str(i), end="")
     print("\r Finish !!", end="")
 
