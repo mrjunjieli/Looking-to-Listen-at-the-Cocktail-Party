@@ -6,6 +6,7 @@ import os
 
 def bounding_box_check(faces,x,y):
     # check the center
+    print(faces)
     for face in faces:
         bounding_box = face['box']
         if(bounding_box[1]<0):
@@ -64,7 +65,7 @@ if __name__ == "__main__":
         os.mkdir(path=output)
 
     for i in range(detect_range[0], detect_range[1]):
-        for j in range(76):
+        for j in range(76):#only choose 75 faces ???
             filename = '%d-%02d.jpg' % (i, j)
             if (not os.path.exists('%s%s' % (frame_pth, filename))):
                 print('cannot find input: ' + '%s%s' % (frame_pth, filename))

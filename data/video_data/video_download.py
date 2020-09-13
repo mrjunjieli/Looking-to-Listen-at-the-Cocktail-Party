@@ -67,7 +67,8 @@ def download_video_frames(loc,d_csv,start_idx,end_idx,rm_video):
         start_time = time.strftime("%H:%M:%S.0",time.gmtime(start_time))
         end_time = time.strftime("%H:%M:%S.0",time.gmtime(end_time))
         command += 'youtube-dl --prefer-ffmpeg -f "mp4" -o o' + f_name + '.mp4 ' + link + ';'
-        command += 'ffmpeg -i o'+f_name+'.mp4'+' -c:v h264 -c:a copy -ss '+str(start_time)+' -t '+str(end_time)+' '+f_name+'.mp4;'
+        #why choose video length ==3??
+        command += 'ffmpeg -i o'+f_name+'.mp4'+' -c:v h264 -c:a copy -ss '+str(start_time)+' -t '+'3 '+f_name+'.mp4;'
         command += 'rm o%s.mp4;' % f_name
         #ommand += 'ffmpeg -i %s.mp4 -r 25 %s.mp4;' % (f_name, 'clip_' + f_name)  # convert fps to 25
         #command += 'rm %s.mp4;' % f_name
