@@ -6,7 +6,6 @@ import os
 
 def bounding_box_check(faces,x,y):
     # check the center
-    print(faces)
     for face in faces:
         bounding_box = face['box']
         if(bounding_box[1]<0):
@@ -34,6 +33,7 @@ def face_detect(file,detector,frame_path,cat_train,output_dir):
     img = cv2.imread('%s%s'%(frame_path,file))
     x = img.shape[1] * x
     y = img.shape[0] * y
+
     faces = detector.detect_faces(img)
     # check if detected faces
     if(len(faces)==0):
