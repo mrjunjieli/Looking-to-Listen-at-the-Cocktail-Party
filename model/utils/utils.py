@@ -8,7 +8,7 @@ def stft(data, fft_size=512, step=160, padding=True):
         pd = np.zeros(192, )
         data = np.concatenate((data, pd), axis=0)
     windows = np.concatenate((np.zeros((56,)), np.hanning(fft_size - 112), np.zeros((56,))), axis=0)
-    windows_num = (len(data) - fft_size) // step
+    windows_num = (len(data) - fft_size) // step#???
     output = np.ndarray((windows_num, fft_size), dtype=data.dtype)
     for window in range(windows_num):
         start = int(window * step)
@@ -76,7 +76,7 @@ def fast_istft(data, power=False):
     return data
 
 
-def generate_cRM(Y, S):
+def generate_cRM(Y, S): #Y-mix S-single
     M = np.zeros(Y.shape)
     epsilon = 1e-8
     # real part

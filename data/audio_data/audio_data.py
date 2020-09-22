@@ -63,7 +63,9 @@ def audio_to_numpy(audio_path_list, data_path=database_path, fix_sr=16000):
     for idx, path in audio_path_list:
         print('\r aduio numpy generating... %d' % ((idx / len(audio_path_list)) * 100), end='')
         data, _ = librosa.load(path, sr=fix_sr)
+        print('data',data.shape)
         data = utils.fast_stft(data)
+        print(data.shape)
         name = 'single-%05d' % idx
         with open('%s/single_TF.txt' % data_path, 'a') as f:
             f.write('%s.npy' % name)
@@ -110,7 +112,7 @@ def single_mix(combo_idx, split_list, datapath):
 
     mix_wav = np.zeros_like(wav_list[0])
     for wav in wav_list:
-        mix_wav += wav * mix_rate
+        mix_wav += wav * mix_rate #mix two signals
 
     wav_name = prefix + mid_name + '.wav'
     wavfile.write('%s/mix_wav/%s' % (datapath, wav_name), 16000, mix_wav)
