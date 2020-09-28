@@ -46,7 +46,6 @@ def extract_tensors_from_checkpoint_file(filename, output_folder):
     reader = tf.train.load_checkpoint(filename)
 
     for key in reader.get_variable_to_shape_map():
-        print('key:',key)
         # not saving the following tensors
         if key == 'global_step':
             continue

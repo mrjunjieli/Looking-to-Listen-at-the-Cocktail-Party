@@ -4,7 +4,7 @@ from __future__ import print_function
 import sys
 import os
 import datetime
-sys.path.append("../utils")
+sys.path.insert(0,"../utils")
 import utils
 import pandas as pd
 import time
