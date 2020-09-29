@@ -11,7 +11,7 @@ def make_audio(location, name, d_csv, start_idx, end_idx):
         start_time = d_csv.loc[i][1]
         end_time = start_time+3.0
         # utils.download(location,f_name,link) 注释
-        utils.cut(location,f_name,start_time,end_time)
+        # utils.cut(location,f_name,start_time,end_time)
         print("\r Process audio... ".format(i) + str(i), end="")
     print("\r Finish !!", end="")
 
