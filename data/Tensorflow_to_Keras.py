@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 import sys
-sys.path.append('./utils/')
+sys.path.insert(0,'./utils/')
 from resnet import *
 
 

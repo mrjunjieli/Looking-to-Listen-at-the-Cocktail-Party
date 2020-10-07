@@ -17,7 +17,7 @@ resume_state = False
 
 # Parameters
 people_num = 2
-epochs = 10
+epochs = 1
 initial_epoch = 0
 batch_size = 1
 gamma_loss = 0.1
