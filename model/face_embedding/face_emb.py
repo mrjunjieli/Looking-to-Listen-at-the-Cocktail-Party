@@ -25,7 +25,7 @@ if HDF5:
     if not os.path.exists(save_path):
         os.makedirs(save_path)
 
-    model = load_model(MODEL_PATH)
+    model = load_model(MODEL_PATH,compile=False)
     model.summary()
     avgPool_layer_model = Model(inputs=model.input,outputs=model.get_layer('AvgPool').output)
     # print(avgPool_layer_model.predict(data))
